@@ -1,0 +1,24 @@
+body{
+    background-color: beige;
+    font-family: Calibri, Helvetica, sans-serif;
+}
+#go{
+    background-color: darkgreen;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 1;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 85px;
+  border-radius: 10px;
+}
+
+table,
+td, th {
+  text-align: center;
+}

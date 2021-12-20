@@ -1,0 +1,80 @@
+body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: white;
+}
+.container {
+  padding: 50px;
+  background-color: whitesmoke;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: lightgray;
+  outline: none;
+}
+div {
+  padding: 10px 0;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: darkgreen;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 300px;
+}
+.registerbtn:hover {
+  opacity: 3;
+}
+h1 {
+  color: #ff0000;
+}
+
+form {
+  font-weight: 900;
+}
+
+body{display: flex; justify-content:center;}
+.container1 {
+    display: flex;
+}
+.container1 > .right {
+    flex-grow: 1;
+}
+.container1 > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 10px;
+}
+.container1 > div.left {
+    align-items: flex-end;
+}
+.left > div, .right > div {
+    margin: 5px 0;
+    height: 1.5em;
+}
+div.right > div:nth-child(3n-1) input {
+    width: 50%;
+}
+input{border:1px solid;font-size: inherit;}

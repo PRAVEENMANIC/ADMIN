@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <h1>CLIENTS</h1>
+    <hr />
+    <br /><br /><br />
+
+    <center>
+      <table style="width: 90%" id="usersTable">
+        <tr>
+          <th>
+            <b><h3>FIRSTNAME</h3></b>
+          </th>
+          <th>
+            <b><h3>LASTNAME</h3></b>
+          </th>
+          <th>
+            <b><h3>ADDRESS</h3></b>
+          </th>
+          <th>
+            <b><h3>AADHAR</h3></b>
+          </th>
+          <th>
+            <b><h3>PAN</h3></b>
+          </th>
+          <th></th>
+        </tr>
+      </table>
+    </center>
+    <p align="right">
+      <input type="submit" id="btn" name="" value="ADD CLIENT" onclick="window.location.href= 'primaryreg.html';"/>
+    </p>
+  </body>
+  <script>
+    let usersTable = document.getElementById("usersTable");
+
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    let dynamicCodeString = "";
+
+    for (let i = 0; i < users.length; i++) {
+      dynamicCodeString +=
+        "<tr>" +
+        "<td>" +
+        users[i]["firstName"] +
+        "</td>" +
+        "<td>" +
+        users[i]["lastName"] +
+        "</td>" +
+        "<td>" +
+        users[i]["address"] +
+        "</td>" +
+        "<td>" +
+        users[i]["aadhar"] +
+        "</td>" +
+        "<td>" +
+        users[i]["pan"] +
+        "</td>" +
+        "<td>" +
+        "<a id='view' href='clientprof.html?index=" +
+        i +
+        "'>View Profile</a>";
+      ("</tr>");
+    }
+
+    usersTable.innerHTML += dynamicCodeString;
+  </script>
+</html>

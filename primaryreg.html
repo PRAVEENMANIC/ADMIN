@@ -1,0 +1,82 @@
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<link rel="stylesheet" href="style1.css">  
+</head>  
+<body>  
+<!-- <form>   -->
+  <div class="container">  
+  <center>  <h1> PRIMARY REGISTRATION </h1> </center>  
+  <hr> 
+  <div class="container1">
+    <div class="left">
+      <label> <b>FIRSTNAME:</b> </label>
+      <label> <b>LASTNAME:</b> </label>
+      <label> <b>ADDRESS:</b> </label>
+      <label> <b>AADHAR:</b> </label> 
+      <label> <b>PAN:</b> </label>
+  </div>
+  
+  
+  <div class="right">
+      <input type="text" id="firstname" placeholder= "" size="15" required />   
+      <input type="text" id="lastname" placeholder="" size="15" required />  
+      <textarea cols="80" rows="3" value="address" id="address"> </textarea>        
+      <input type="text" id="aadhar" maxlength="12" placeholder="xxxx - xxxx - xxxx" size="15" required pattern="[0-9]+" />       
+      <input type="text" id="pan" maxlength="10" placeholder="xxxxxxxxxx" size="15" required pattern="[a-zA-Z0-9]+" />
+  </div>
+  <p align="right"> 
+    <button type="submit" class="registerbtn" onclick="onNext()">NEXT</button></p> 
+</div>    
+<!-- </form>   -->
+</body>  
+
+<script>
+ function onNext() {
+
+    let firstName = document.getElementById("firstname").value;
+    let lastName = document.getElementById("lastname").value;
+    let address = document.getElementById("address").value;
+    let aadhar = document.getElementById("aadhar").value;
+    let pan = document.getElementById("pan").value;
+
+    if(firstName == "" || firstName == null){
+        alert("fill the firstName")
+    } else if(lastName == "" || lastName == null){
+        alert("fill the lastName")
+    } else if(address == "" || address == null){
+        alert("fill the address")
+    }
+    else if(aadhar == "" || aadhar == null){
+        alert("fill the aadhar number")
+    }
+    else if(pan == "" || pan == null){
+        alert("fill the pan number")
+    }else{
+        let user = {
+         "firstName":  firstName,
+         "lastName":  lastName,
+         "address":  address,
+         "aadhar":  aadhar,
+         "pan":  pan
+        }
+
+        //fetching the all the users
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        //adding the new user to the array
+        users.push(user)
+        
+        //updating localStorage
+        localStorage.setItem("users", JSON.stringify(users)) 
+        
+        console.log(JSON.parse(localStorage.getItem("users")));
+
+        //redirect here
+        window.location.href = "client.html"
+    }
+
+    
+ }
+</script>
+</html> 
